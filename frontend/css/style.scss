@@ -1,0 +1,187 @@
+/*                 //Variables
+//couleur
+$violet :#f3e9f1;
+$white: #fff;
+$gradientviolet: linear-gradient(to right, #d3cce3, #e9e4f0);
+
+//fonts variables
+$roboto: 'Roboto', sans-serif;
+$pattaya: 'Pattaya', sans-serif;
+
+//mixins
+@mixin classFlex{
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin center{
+  padding: 0;
+  margin: 0;
+}
+
+               //Fin variables
+
+                 //Page index
+
+*{
+  @include center;
+  box-sizing: border-box;/* tous les éléments redimensionnés de la même manière*/
+//  }
+/*
+html,body{
+  width: 100%;
+  background: $gradientviolet;
+
+}
+
+header{
+  @include classFlex;
+  max-width: 100%;
+  height: 150px;
+  margin: auto; 
+  background-color: $violet;  
+  margin-bottom: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+nav{
+  @include classFlex;
+  text-transform: uppercase;
+  border-radius: 10px;
+  
+   a{
+    font-family: $roboto;
+    border: 2px solid #cf7e48;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 20px 20px;
+    margin: 0 10px 0 10px;
+    background-color: #cf7e48;
+    color: #f3e9f1;
+
+    &:hover{
+     border: 2px solid #8b4513;
+     background-color: #8b4513;
+     color: $white;
+    }
+  }
+}
+
+h1{
+  text-align: center;
+  font-family: $pattaya;
+  font-size: 50px;
+  padding: 40px 0;
+}
+
+.card {
+  margin: 1rem;
+  border: 1px solid gray;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}*/
+
+
+
+
+                //Variables
+//couleur
+$violet : #7303c0;
+$white: #fff;
+$black: #000000;
+$blue: #0083b0;
+$gradientviolet: linear-gradient(to right, #d3cce3, #e9e4f0);
+
+//fonts variables
+$roboto: 'Roboto', sans-serif;
+$pattaya: 'Pattaya', sans-serif;
+
+//mixins
+@mixin classFlex{
+  display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin center{
+  padding: 0;
+  margin: 0;
+}
+
+           //Fin variables
+
+*{
+  @include center;
+  box-sizing: border-box;/* tous les éléments redimensionnés de la même manière*/
+  font-family: $roboto;
+  }
+
+//En-tête de la page
+header{
+  background-image: url("../background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 60px;
+}
+
+h1{
+  font-family: $pattaya;
+  color: $white;
+  font-size: 3em;
+}
+
+nav{
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px 60px 0 60px;
+  align-items: center;
+  
+       li{
+        display: inline-block;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin: 0 20px;
+        border: 1px solid $white;
+        border-radius: 20px;
+        background-color: $violet;
+        font-size: 1.2em;
+
+        a{
+          text-decoration: none;
+          color: $white;
+        
+        &:hover{
+         color: black;
+         
+        }
+     }
+  }
+}
+
+
+
+
+//Responsive nav
+
+@media (max-width: 800px){
+  nav li{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 10px 0;
+  }
+}
+
