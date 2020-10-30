@@ -15,11 +15,11 @@ fetch(url)
             const lien = document.createElement("a")
             
             const newName = document.createTextNode (name)
-            const newPrice = document.createTextNode (price + " €")
+            const newPrice = document.createTextNode ("Prix : " + " " + price + " €")
             const newDescription = document.createTextNode (description)
             img.src = imageUrl
             lien.href = 'produit.html?id=' + _id;
-            lien.textContent = "détails";
+            lien.textContent = "Détails";
             
             articles.appendChild (div)
             div.appendChild (h3)
