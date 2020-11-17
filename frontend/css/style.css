@@ -17,29 +17,19 @@ header {
   margin-bottom: 60px; }
 
 h1 {
-  font-family: "Pattaya", sans-serif;
-  color: #fff;
+  font-family: "Love Ya Like A Sister", cursive;
+  color: #261624;
   font-size: 3em;
   text-shadow: 2px 2px 2px grey; }
 
-h2 {
-  font-size: 2.5em;
-  font-family: "Pattaya", sans-serif;
-  text-align: center;
-  margin-bottom: 50px;
-  text-shadow: 2px 2px 2px grey; }
-
-h3 {
-  font-size: 1.5em;
-  color: #000000;
-  font-family: "Pattaya", sans-serif;
-  margin: 10px 0; }
-
-h4 {
-  font-size: 1.3em;
-  color: #000000;
-  font-family: "Pattaya", sans-serif;
-  margin: 0px 0 10px 0; }
+.logo {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none; }
+  .logo i {
+    background: -webkit-linear-gradient(top, #c47868 0%, #ab6aae 50%, #905cfc 88%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
 
 nav {
   z-index: 2;
@@ -58,13 +48,27 @@ nav {
     background-color: #7303c0;
     font-size: 1.2em;
     text-align: center; }
+    nav li:hover {
+      background-color: #fff; }
     nav li a {
       text-decoration: none;
+      transition-duration: 1s;
       color: #fff; }
       nav li a:hover {
-        color: black; }
+        color: #7303c0;
+        cursor: pointer; }
       nav li a span {
         padding-left: 5px; }
+
+h2 {
+  font-size: 2.5em;
+  font-family: "Pattaya", sans-serif;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 2px grey; }
+
+h3, h4 {
+  font-family: "Pattaya", sans-serif; }
 
 #articles {
   flex-direction: column;
@@ -92,36 +96,77 @@ nav {
     text-decoration: none;
     font-size: 1em; }
 
+#produits {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #produits img {
+    width: 70%; }
+
+.elementproduit {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 30px gray;
+  background-color: #D8BFD8;
+  margin-bottom: 50px; }
+  .elementproduit h4 {
+    font-family: "Roboto", sans-serif;
+    width: 70%; }
+  .elementproduit p {
+    font-family: "Pattaya", sans-serif;
+    font-size: 1.2em; }
+
 footer {
   background-color: #b882ee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 20px 40px; }
-  footer a {
-    text-decoration: none;
-    color: #000000; }
+  footer #contact {
+    display: flex;
+    justify-content: space-between; }
+    footer #contact i {
+      color: blue; }
+    footer #contact a {
+      text-decoration: none;
+      color: #000000; }
 
-h5 {
-  font-size: 1.2em; }
+#footer {
+  display: block; }
+  #footer p {
+    text-align: center;
+    font-size: 1em;
+    padding-top: 20px; }
 
 @media (max-width: 800px) {
   h1 {
     font-size: 2.5em; }
 
-  nav li {
+  nav ul {
     display: flex;
-    flex-direction: column;
-    margin: 10px 10px 10px 0;
-    font-size: 1em; }
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 0.8em;
+    margin-top: 30px;
+    width: 100%; }
 
   h5 {
     font-size: 1em; } }
 @media (max-width: 375px) {
+  h2 {
+    font-size: 2em; }
+
   footer {
     font-size: 1em; }
-
-  h5 {
-    font-size: 0.8em; } }
+    footer #contact {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+    footer a {
+      width: 100px;
+      padding: 5px 0px; } }
 
 /*# sourceMappingURL=style.css.map */

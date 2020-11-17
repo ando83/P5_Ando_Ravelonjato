@@ -6,11 +6,12 @@ $violet1: #b882ee;
 $lightviolet: #D8BFD8;
 $white: #fff;
 $black: #000000;
-$gradientviolet: linear-gradient(to right, #d3cce3, #e9e4f0);
+$gradientviolet: -webkit-linear-gradient(top, #c47868 0%,#ab6aae 50%,#905cfc 88%);
 
 //fonts variables
 $roboto: 'Roboto', sans-serif;
 $pattaya: 'Pattaya', sans-serif;
+$love: 'Love Ya Like A Sister', cursive;
 
 //mixins
 @mixin classFlex{
@@ -46,34 +47,26 @@ header{
 }
 
 h1{
-  font-family: $pattaya;
-  color: $white;
+  font-family: $love;
+  color: #261624;
   font-size: 3em;
   text-shadow: 2px 2px 2px grey;
+ 
 }
 
-h2{
-  font-size: 2.5em;
-  font-family: $pattaya;
-  text-align: center;
-  margin-bottom: 50px;
-  text-shadow: 2px 2px 2px grey;
+.logo{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+   
+  i{
+    background: $gradientviolet;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
-h3{
-  font-size: 1.5em;
-  color: $black;
-  font-family: $pattaya;
-  margin: 10px 0;
-}
-
-h4{
-  font-size: 1.3em;
-  color: $black;
-  font-family: $pattaya;
-  margin: 0px 0 10px 0;
-}
-
+//menu
 nav{
   z-index: 2;
   display: flex;
@@ -93,22 +86,45 @@ nav{
         font-size: 1.2em;
         text-align: center;
 
+        &:hover{
+        background-color: $white;  
+        }
+
         a{
           text-decoration: none;
+          transition-duration: 1s;
           color: $white;
         
         &:hover{
-         color: black;
+         color: $violet;
+      
+         cursor: pointer;
         }
 
         span{
           padding-left: 5px;
+
         }
      }
   }
 }
 
-//La partie articles 
+//liste des peluches page index
+
+
+h2{
+  font-size: 2.5em;
+  font-family: $pattaya;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 2px grey;
+}
+
+h3 , h4 {
+  font-family: $pattaya;
+}
+
+//La partie articles Page Index
 
 #articles{
   flex-direction: column;
@@ -138,36 +154,87 @@ nav{
   }
 }
 
-footer{
-  background-color: $violet1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  
-  a{
-    text-decoration: none;
-    color: $black;
+//Partie Page Produit
+
+#produits{
+  @include classFlex;
+
+  img{
+    width: 70%;
   }
 }
 
-h5{
-  font-size: 1.2em;
+.elementproduit{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 30px gray;
+  background-color: $lightviolet;
+  margin-bottom: 50px;
+
+  h4{
+    font-family: $roboto;
+    width: 70%;
+  }
+
+  p{
+    font-family: $pattaya;
+    font-size: 1.2em;
+  }
 }
 
-//Responsive nav
+footer{
+  background-color: $violet1;
+  padding: 20px 40px;
+
+  #contact{
+    display: flex;
+    justify-content: space-between;
+
+    i{
+      color: blue;
+    } 
+
+    a{
+      text-decoration: none;
+      color: $black;
+  }
+ }
+}
+
+#footer{
+  display: block;
+
+  p{
+    text-align: center;
+    font-size: 1em;
+    padding-top: 20px;
+  }
+}
+
+//Responsive nav page index
 
 @media (max-width: 800px){
   h1{
     font-size: 2.5em;
   }
 
-  nav li{
+  nav{
+
+   ul{
     display: flex;
-    flex-direction: column;
-    margin: 10px 10px 10px 0;
-    font-size: 1em;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 0.8em;
+    margin-top: 30px;
+    width: 100%;
   }
+  
+}
 
   h5{
     font-size: 1em;
@@ -176,13 +243,25 @@ h5{
 
 @media (max-width: 375px){
 
-  footer{
-    font-size: 1em;
+  h2{
+    font-size: 2em;
   }
 
-  h5{
-    font-size: 0.8em;
-  }
+  footer{
+    font-size: 1em;
+
+    #contact{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    } 
+     
+      a{
+        width: 100px;
+        padding: 5px 0px;
+      }
+   }
 }
 
 
