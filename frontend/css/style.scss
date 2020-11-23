@@ -4,8 +4,11 @@
 $violet : #7303c0;
 $violet1: #b882ee;
 $lightviolet: #D8BFD8;
+$violet2: #7B68EE;
 $white: #fff;
 $black: #000000;
+$grey: #A9A9A9;
+$blue: #4169E1;
 $gradientviolet: -webkit-linear-gradient(top, #c47868 0%,#ab6aae 50%,#905cfc 88%);
 
 //fonts variables
@@ -97,7 +100,6 @@ nav{
         
         &:hover{
          color: $violet;
-      
          cursor: pointer;
         }
 
@@ -156,8 +158,10 @@ h3 , h4 {
 
 //Partie Page Produit
 
+
 #produits{
   @include classFlex;
+  //flex-direction: column;
 
   img{
     width: 70%;
@@ -184,6 +188,37 @@ h3 , h4 {
     font-size: 1.2em;
   }
 }
+
+#conteneurCouleur{
+  @include classFlex;
+  flex-direction: column;
+  background-color: $violet2;
+  box-shadow: 0 0 30px gray;
+  width: 70%;
+  padding: 20px 0 20px 0;
+  margin: auto;
+  margin-bottom: 80px;
+  margin-top: -49px;
+
+  #label_couleur{
+    color: $white;
+    font-family: $pattaya;
+    font-size: 1.3em;
+  }
+}
+
+#bouton_produit{
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: $grey;
+  cursor: pointer;
+  
+
+
+}
+
+//En Bas de ma page
 
 footer{
   background-color: $violet1;

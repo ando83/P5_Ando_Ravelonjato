@@ -8,9 +8,9 @@ fetch(url)
     .then(data =>{
     for(let i = 0; i < data.length; i++){
     
-        
+    // récupérer id ="articles" de la page index.html     
     let article = document.getElementById("articles");
-   
+
      //Créer div elements
      let divTitre = document.createElement("div");
      divTitre.setAttribute("class", "elements");
@@ -43,10 +43,9 @@ fetch(url)
     lien.innerHTML = "Voir le produit";
     divTitre.appendChild (lien);
     
-  }  
-})
+     }  
+   })
     
-     //.catch(error => console.log(error))
-     .catch((error) => {
+    .catch((error) => {
         console.error(error);
-      });
+    });

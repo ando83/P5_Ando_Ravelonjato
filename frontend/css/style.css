@@ -119,6 +119,30 @@ h3, h4 {
     font-family: "Pattaya", sans-serif;
     font-size: 1.2em; }
 
+#conteneurCouleur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #7B68EE;
+  box-shadow: 0 0 30px gray;
+  width: 70%;
+  padding: 20px 0 20px 0;
+  margin: auto;
+  margin-bottom: 80px;
+  margin-top: -49px; }
+  #conteneurCouleur #label_couleur {
+    color: #fff;
+    font-family: "Pattaya", sans-serif;
+    font-size: 1.3em; }
+
+#bouton_produit {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 50px;
+  background-color: #A9A9A9;
+  cursor: pointer; }
+
 footer {
   background-color: #b882ee;
   padding: 20px 40px; }
