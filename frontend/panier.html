@@ -18,7 +18,7 @@
             <ul>
               <li><a href="index.html">
                   <i class="fa fa-home"></i> Accueil</a></li>
-              <li class="panier">
+              <li class="Panier">
                 <a href="panier.html">
                   <i class="fas fa-shopping-cart"></i> Panier<span>0</span>
                 </a>
@@ -27,19 +27,34 @@
         </nav>
     </header>
 
-<h2>Choix des Ours en peluche</h2>
+<h2>Détails de votre Panier</h2>
 
-<section id="produits"></section>
+<div id="conteneur_panier">
 
-<div id="conteneurCouleur"> 
+    <section id="panier">
+     
+            <table class="tableau_panier">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Couleur</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <p id="sub-total">
+                <strong>Total</strong>: <span id="stotal"></span>
+            </p>
 
-  <label for="couleur_select" id="label_couleur">Couleur</label>
-    <select  name="couleur" id="couleur_select">
-      <option value="" disabled selected>Choix des couleurs</option>
-    </select>
 
-    <button type="button" id="bouton_produit">Ajouter au panier</button>
-  </div> 
+    </section>
+ 
+ </div>
+
+
+
+
 
 <footer>
   <div id="contact">
@@ -50,7 +65,7 @@
   
    <div id="footer"><p>© Orinoco 2020 -Tous droits résérvés.</p></div>
 </footer>
-<script type="text/javascript" src="js/produit.js"></script>
+<script type="text/javascript" src="js/panier.js"></script>
 </body>
 
 </html>

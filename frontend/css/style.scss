@@ -192,7 +192,7 @@ h3 , h4 {
 #conteneurCouleur{
   @include classFlex;
   flex-direction: column;
-  background-color: $violet2;
+  background-color: $violet1;
   box-shadow: 0 0 30px gray;
   width: 70%;
   padding: 20px 0 20px 0;
@@ -207,15 +207,21 @@ h3 , h4 {
   }
 }
 
+#couleur_select{
+  font-size: 1em;
+}
+
 #bouton_produit{
-  margin-top: 5px;
-  padding: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 10px;
   border-radius: 50px;
-  background-color: $grey;
+  background-color: $blue;
+  color: $white;
   cursor: pointer;
-  
-
-
+  border: none;
+  outline-style:none; 
+  text-transform: uppercase;
 }
 
 //En Bas de ma page
@@ -223,13 +229,14 @@ h3 , h4 {
 footer{
   background-color: $violet1;
   padding: 20px 40px;
+  font-size: 1em;
 
   #contact{
     display: flex;
     justify-content: space-between;
 
     i{
-      color: blue;
+      color: $blue;
     } 
 
     a{
@@ -268,7 +275,6 @@ footer{
     margin-top: 30px;
     width: 100%;
   }
-  
 }
 
   h5{

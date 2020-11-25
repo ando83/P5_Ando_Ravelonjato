@@ -1,4 +1,5 @@
 //l'url de l'API
+
 let urlId = "http://localhost:3000/api/teddies/";
 
 //Uliliser la méthode location search pour récupérer l'id de l'url + modifier la structure de la page produit
@@ -51,8 +52,6 @@ fetch (urlId + recupererId())
         document.getElementById("couleur_select").appendChild(option);
         }
     
-
-    
     //Messages d'alerte lors de l'ajout du produit 
     function alertProduit(){
         alert("Sélectionner une couleur");
@@ -61,22 +60,43 @@ fetch (urlId + recupererId())
     function alertAjouter(){
         alert("Article ajouté au panier")
     }
-
-    //sauvegarder le produit au clic du bouton 
+    
+    //sauvegarder le produit au clic du bouton pour mettre au panier
     let btn = document.getElementById("bouton_produit");
-    btn.addEventListener ("click", function(){
-       
+    btn.addEventListener ("click", function(event){
+     event.preventDefault();  
         let selection = document.getElementById("couleur_select");
         let couleurSelect = couleur_select.selectedIndex;
-        if(couleurSelect == "" || couleurSelect== undefined || couleurSelect== 0){
+        if( couleurSelect == 0 || couleurSelect < 1){
             alertProduit()
+            
+                 
+            
         }else{
-            //Conversion valeur javascript en chaîne JSON
-            let objetTraiter = JSON.stringify({id: data._id, name: data.name, color: couleur_select, price : data.price});
-            localStorage.setItem(data._id, objetTraiter);//rajoute clé et valeur pendant l'ajout dans le localStorage
+            //Conversion valeur javascript en chaîne JSON - via localstorage
+            
+            let produits = {id: data._id, name: data.name, color: couleurSelect, price : data.price};  
+            let objetTraiter = JSON.stringify(produits);
+            let dataId = data._id;
+            localStorage.setItem(dataId, objetTraiter);//rajoute clé et valeur pendant l'ajout dans le localStorage
             alertAjouter();
+            nombrePanier(); 
+            chargePanier()
+           
         }
-      
+       
+  /*}else{
+        //Conversion valeur javascript en chaîne JSON - via localstorage
+        let tableauProduit =[];
+        let produits = {id: data._id, name: data.name, color: couleurSelect, price : data.price};
+        tableauProduit.push(produits); //ajoute nouveau élément à la fin du tableau tableau 
+        let objetTraiter = JSON.stringify(tableauProduit);
+        let dataId = data._id;
+        localStorage.setItem(dataId, objetTraiter);//rajoute clé et valeur pendant l'ajout dans le localStorage
+        alertAjouter();
+        nombrePanier()
+
+        }*/
     })
 
 })
@@ -84,9 +104,34 @@ fetch (urlId + recupererId())
 .catch((error) => {
  console.error(error);
 });
-   
 
 
+    
+//Le nombre d'article sur l'icône panier est sauvegardé même en actualisant la page
+function chargePanier(){
+    let localPanier = localStorage.getItem("nombrePanier");
+
+    if(localPanier){
+        document.querySelector(".panier span").textContent = localPanier;
+    }
+}
+
+//FONCTION POUR AVOIR LE NOMBRE TOTAL DES PRODUITS SELECTIONNÉS DANS LE PANIER//
+function nombrePanier(){
+    let localPanier = localStorage.getItem("nombrePanier");
+    
+    localPanier = parseInt(localPanier);
+
+    if(localPanier){
+        localStorage.setItem("nombrePanier", localPanier + 1);
+        document.querySelector(".panier span").textContent = + 1;
+    }else{
+        localStorage.setItem("nombrePanier", 1); 
+        document.querySelector(".panier span").textContent = 1;
+    }
+}
+
+chargePanier();
 
 
 

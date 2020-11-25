@@ -124,7 +124,7 @@ h3, h4 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #7B68EE;
+  background-color: #b882ee;
   box-shadow: 0 0 30px gray;
   width: 70%;
   padding: 20px 0 20px 0;
@@ -136,21 +136,30 @@ h3, h4 {
     font-family: "Pattaya", sans-serif;
     font-size: 1.3em; }
 
+#couleur_select {
+  font-size: 1em; }
+
 #bouton_produit {
-  margin-top: 5px;
-  padding: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 10px 10px;
   border-radius: 50px;
-  background-color: #A9A9A9;
-  cursor: pointer; }
+  background-color: #4169E1;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline-style: none;
+  text-transform: uppercase; }
 
 footer {
   background-color: #b882ee;
-  padding: 20px 40px; }
+  padding: 20px 40px;
+  font-size: 1em; }
   footer #contact {
     display: flex;
     justify-content: space-between; }
     footer #contact i {
-      color: blue; }
+      color: #4169E1; }
     footer #contact a {
       text-decoration: none;
       color: #000000; }
