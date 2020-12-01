@@ -28,6 +28,18 @@ $love: 'Love Ya Like A Sister', cursive;
   margin: 0;
 }
 
+@mixin boutonblue{
+  font-weight: bold;
+  border-radius: 50px;
+  background-color: $blue;
+  color: $white;
+  cursor: pointer;
+  border: none;
+  outline-style:none; 
+  text-transform: uppercase;
+  padding: 10px 10px;
+}
+
            //Fin variables
 
 *{
@@ -212,17 +224,24 @@ h3 , h4 {
 }
 
 #bouton_produit{
-  font-weight: bold;
+  @include boutonblue;
   margin-top: 10px;
-  padding: 10px 10px;
-  border-radius: 50px;
-  background-color: $blue;
-  color: $white;
-  cursor: pointer;
-  border: none;
-  outline-style:none; 
-  text-transform: uppercase;
 }
+
+//Partie Page Panier
+
+.elementpanier{
+  display: flex;
+	justify-content: center;
+  
+  
+}
+
+
+
+
+
+
 
 //En Bas de ma page
 

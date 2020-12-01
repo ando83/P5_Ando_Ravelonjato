@@ -141,15 +141,19 @@ h3, h4 {
 
 #bouton_produit {
   font-weight: bold;
-  margin-top: 10px;
-  padding: 10px 10px;
   border-radius: 50px;
   background-color: #4169E1;
   color: #fff;
   cursor: pointer;
   border: none;
   outline-style: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding: 10px 10px;
+  margin-top: 10px; }
+
+.elementpanier {
+  display: flex;
+  justify-content: center; }
 
 footer {
   background-color: #b882ee;

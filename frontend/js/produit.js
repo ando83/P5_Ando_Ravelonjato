@@ -12,7 +12,7 @@ function recupererId(){
 fetch (urlId + recupererId())
 .then(response => response.json())
 .then(data=> {
-
+     
     //récupérer id "produits" de la page html produit
     let produit = document.getElementById("produits");
 
@@ -62,41 +62,34 @@ fetch (urlId + recupererId())
     }
     
     //sauvegarder le produit au clic du bouton pour mettre au panier
+
     let btn = document.getElementById("bouton_produit");
     btn.addEventListener ("click", function(event){
-     event.preventDefault();  
+     event.preventDefault();  //blocage du comportement par défaut du navigateur lorsqu'un événement se produit
         let selection = document.getElementById("couleur_select");
         let couleurSelect = couleur_select.selectedIndex;
         if( couleurSelect == 0 || couleurSelect < 1){
-            alertProduit()
-            
-                 
-            
+            alertProduit()//message d'alerte lors de l'ajout
+             
         }else{
-            //Conversion valeur javascript en chaîne JSON - via localstorage
             
-            let produits = {id: data._id, name: data.name, color: couleurSelect, price : data.price};  
-            let objetTraiter = JSON.stringify(produits);
-            let dataId = data._id;
-            localStorage.setItem(dataId, objetTraiter);//rajoute clé et valeur pendant l'ajout dans le localStorage
-            alertAjouter();
-            nombrePanier(); 
-            chargePanier()
+            let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer toutes les clés via localstorage pour ne pas écraser la dernière
+            produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect}); //On ajoute des éléments au tableau
+            localStorage.setItem('panier', JSON.stringify(produitTableau));//stocker clé et valeur pendant l'ajout dans le localStorage et conversion valeur javascript en chaîne JSON - via localstorage
+            window.location.reload()//recharge la page
+            
+            //le nombre d'article est rajouté via localStorage
+            let localPanier = localStorage.getItem("nombrePanier");
+            localPanier = parseInt(localPanier);
+            if(localPanier){
+                localStorage.setItem("nombrePanier", localPanier + 1);
+            }else{
+                localStorage.setItem("nombrePanier", 1); 
+            }
            
+            alertAjouter();//Message d'alerte lors de l'ajout
         }
        
-  /*}else{
-        //Conversion valeur javascript en chaîne JSON - via localstorage
-        let tableauProduit =[];
-        let produits = {id: data._id, name: data.name, color: couleurSelect, price : data.price};
-        tableauProduit.push(produits); //ajoute nouveau élément à la fin du tableau tableau 
-        let objetTraiter = JSON.stringify(tableauProduit);
-        let dataId = data._id;
-        localStorage.setItem(dataId, objetTraiter);//rajoute clé et valeur pendant l'ajout dans le localStorage
-        alertAjouter();
-        nombrePanier()
-
-        }*/
     })
 
 })
@@ -106,39 +99,5 @@ fetch (urlId + recupererId())
 });
 
 
+
     
-//Le nombre d'article sur l'icône panier est sauvegardé même en actualisant la page
-function chargePanier(){
-    let localPanier = localStorage.getItem("nombrePanier");
-
-    if(localPanier){
-        document.querySelector(".panier span").textContent = localPanier;
-    }
-}
-
-//FONCTION POUR AVOIR LE NOMBRE TOTAL DES PRODUITS SELECTIONNÉS DANS LE PANIER//
-function nombrePanier(){
-    let localPanier = localStorage.getItem("nombrePanier");
-    
-    localPanier = parseInt(localPanier);
-
-    if(localPanier){
-        localStorage.setItem("nombrePanier", localPanier + 1);
-        document.querySelector(".panier span").textContent = + 1;
-    }else{
-        localStorage.setItem("nombrePanier", 1); 
-        document.querySelector(".panier span").textContent = 1;
-    }
-}
-
-chargePanier();
-
-
-
-
-
-
-
-
-                   
-
