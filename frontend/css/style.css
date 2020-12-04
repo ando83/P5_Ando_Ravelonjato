@@ -60,12 +60,20 @@ nav {
       nav li a span {
         padding-left: 5px; }
 
-h2 {
-  font-size: 2.5em;
-  font-family: "Pattaya", sans-serif;
-  text-align: center;
-  margin-bottom: 50px;
-  text-shadow: 2px 2px 2px grey; }
+.conteneur-titre {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .conteneur-titre h2 {
+    font-size: 2em;
+    font-family: "Pattaya", sans-serif;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 2px grey;
+    background: #EBDEF0;
+    padding: 30px 30px;
+    width: 500px;
+    border: 10px solid rgba(255, 255, 255, 0.5); }
 
 h3, h4 {
   font-family: "Pattaya", sans-serif; }
@@ -151,9 +159,42 @@ h3, h4 {
   padding: 10px 10px;
   margin-top: 10px; }
 
-.elementpanier {
+#panier {
+  padding: 20px 40px;
+  margin: 40px auto 80px;
+  width: 500px;
+  position: relative;
+  background-color: #D8BFD8;
+  border-radius: 20px; }
+
+.elementpanier1 {
   display: flex;
-  justify-content: center; }
+  justify-content: space-between;
+  border: 5px solid rgba(255, 255, 255, 0.5); }
+  .elementpanier1 p {
+    font-family: "Pattaya", sans-serif;
+    font-size: 1.2em;
+    padding-left: 10px; }
+  .elementpanier1 h4 {
+    width: 150px; }
+  .elementpanier1 .prix_panier {
+    width: 100px; }
+
+.nombretotal {
+  text-align: center;
+  font-family: "Pattaya", sans-serif;
+  font-size: 1.3em;
+  border: 10px solid rgba(255, 255, 255, 0.5); }
+
+.prixtotal {
+  text-align: center;
+  margin: 20px 0 10px 0;
+  font-family: "Pattaya", sans-serif;
+  font-size: 1.3em;
+  border: 10px solid rgba(255, 255, 255, 0.5);
+  border-radius: 90px;
+  border-top-left-radius: 2px;
+  border-bottom-right-radius: 2px; }
 
 footer {
   background-color: #b882ee;
@@ -179,6 +220,9 @@ footer {
   h1 {
     font-size: 2.5em; }
 
+  h2 {
+    font-size: 1.5em; }
+
   nav ul {
     display: flex;
     flex-direction: row;
@@ -193,7 +237,7 @@ footer {
     font-size: 1em; } }
 @media (max-width: 375px) {
   h2 {
-    font-size: 2em; }
+    font-size: 1.5em; }
 
   footer {
     font-size: 1em; }

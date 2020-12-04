@@ -25,6 +25,7 @@ fetch (urlId + recupererId())
     let h3Produit = document.createElement("h3");
     h3Produit.style.fontSize = "1.8em";
     h3Produit.style.margin = "10px 0";
+    h3Produit.style.color = "white";
     h3Produit.innerHTML = data.name;
     divProduit.appendChild(h3Produit);
 
@@ -59,8 +60,10 @@ fetch (urlId + recupererId())
     
     function alertAjouter(){
         alert("Article ajouté au panier")
+        alert("Vous pouvez vous diriger dans l'icône Panier pour voir vos achats")
     }
     
+
     //sauvegarder le produit au clic du bouton pour mettre au panier
 
     let btn = document.getElementById("bouton_produit");
@@ -68,18 +71,20 @@ fetch (urlId + recupererId())
      event.preventDefault();  //blocage du comportement par défaut du navigateur lorsqu'un événement se produit
         let selection = document.getElementById("couleur_select");
         let couleurSelect = couleur_select.selectedIndex;
+       
         if( couleurSelect == 0 || couleurSelect < 1){
             alertProduit()//message d'alerte lors de l'ajout
              
         }else{
             
-            let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer toutes les clés via localstorage pour ne pas écraser la dernière
-            produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect}); //On ajoute des éléments au tableau
+            let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer toutes les clés via localstorage 
+            produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect, quantité: 1}); //On ajoute des éléments au tableau
             localStorage.setItem('panier', JSON.stringify(produitTableau));//stocker clé et valeur pendant l'ajout dans le localStorage et conversion valeur javascript en chaîne JSON - via localstorage
             window.location.reload()//recharge la page
             
             //le nombre d'article est rajouté via localStorage
-            let localPanier = localStorage.getItem("nombrePanier");
+            //let localPanier = localStorage.getItem("nombrePanier");
+            let localPanier = JSON.parse(localStorage.getItem("nombrePanier"));
             localPanier = parseInt(localPanier);
             if(localPanier){
                 localStorage.setItem("nombrePanier", localPanier + 1);
