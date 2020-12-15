@@ -134,7 +134,7 @@ document.getElementById("formulaire").addEventListener("submit", function(event)
    
    //Alert si le panier est vide
    if(produitTableau == null){
-      swal("Votre panier est vide","", "warning");
+      swal(" Votre panier est vide ","", "warning");
       return false;
    }
 
@@ -148,7 +148,7 @@ document.getElementById("formulaire").addEventListener("submit", function(event)
    
    //Objet et valeur saisie à envoyer au serveur
 
-   let contact = {
+   let contact={
       firstName: firstName.value,
       lastName: lastName.value,
       email: email.value,
