@@ -178,7 +178,7 @@ document.getElementById("formulaire").addEventListener("submit", function(event)
       localStorage.setItem("contact",  JSON.stringify(contact));
       localStorage.setItem("prixTotal", JSON.stringify(totalPrix))
       
-      //window.location.href = "confirmation.html";
+      window.location.href = "confirmation.html";
       console.log('Success:', order);
    })
    
