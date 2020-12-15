@@ -69,8 +69,6 @@ if ( produitTableau === null || produitTableau === undefined ){
    //console.log(montanProduit)
    });
 
-  
-
    //Affiche le nombre total des articles
    if (localPanier!== null){
       let nombreTotal = document.createElement("p");
@@ -119,15 +117,12 @@ let conteneurLienProduit = document.createElement("div");
 conteneurLienProduit .setAttribute("class", "conteneurLien");
 listePanier.appendChild(conteneurLienProduit);
 
-
 let lienProduit = document.createElement("a");
 lienProduit.className ='btn_produit';
 lienProduit.href = "index.html";
 lienProduit.innerHTML = "Poursuivre vos achats?";
 conteneurLienProduit.appendChild(lienProduit);
    
-
-
 //-----PARTIE FORMULAIRE-----//
 document.getElementById("formulaire").addEventListener("submit", function(event){
    event.preventDefault();
