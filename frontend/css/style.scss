@@ -375,6 +375,16 @@ input[type="text"], input[type="email"] {
   }
 }
 
+//PARTIE PAGE CONFIRMATION
+
+#nom-confirmation{
+  @include classFlex;
+  
+  .para-detail{
+    font-size: 1.5em;
+  }
+}
+
 
 
 

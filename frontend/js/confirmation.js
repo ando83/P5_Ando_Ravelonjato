@@ -26,6 +26,6 @@ paraDetaildeux.innerHTML = "Votre numéro de commande est le :"+ " "+ "<span>"+o
 divConfirmation.appendChild(paraDetaildeux);
 
 let paraDetailtrois= document.createElement("p");
-paraDetailtrois .setAttribute("class", "para-detail");
+paraDetailtrois .setAttribute("class", "para-detail3");
 paraDetailtrois.innerHTML = "Vous allez récevoir un email récapitulatif de votre commande à l'adresse"+ " "+ "<span>"+contacts.email+"</span>";
 divConfirmation.appendChild(paraDetailtrois);
