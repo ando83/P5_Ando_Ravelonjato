@@ -1,3 +1,4 @@
+
 //l'url de l'API
 
 let urlId = "http://localhost:3000/api/teddies/";
@@ -54,14 +55,16 @@ fetch (urlId + recupererId())
         }
     
     //Messages d'alerte lors de l'ajout du produit 
-    function alertProduit(){
-        alert("Sélectionner une couleur");
+   function alertProduit(){
+        //alert("Sélectionner une couleur");
+        swal("Sélectionnez une couleur!","", "warning");
     }
     
     function alertAjouter(){
-        alert("Article ajouté au panier")
-        alert("Vous pouvez vous diriger dans l'icône Panier pour voir vos achats")
-    }
+        
+        swal("Article ajouté au panier!", "cliquez sur l'icône Panier pour voir les détails", "success");
+        
+    }  
     
 
     //sauvegarder le produit au clic du bouton pour mettre au panier
@@ -69,21 +72,22 @@ fetch (urlId + recupererId())
     let btn = document.getElementById("bouton_produit");
     btn.addEventListener ("click", function(event){
      event.preventDefault();  //blocage du comportement par défaut du navigateur lorsqu'un événement se produit
+     
         let selection = document.getElementById("couleur_select");
         let couleurSelect = couleur_select.selectedIndex;
        
         if( couleurSelect == 0 || couleurSelect < 1){
             alertProduit()//message d'alerte lors de l'ajout
+           
              
         }else{
             
             let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer toutes les clés via localstorage 
             produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect, quantité: 1}); //On ajoute des éléments au tableau
             localStorage.setItem('panier', JSON.stringify(produitTableau));//stocker clé et valeur pendant l'ajout dans le localStorage et conversion valeur javascript en chaîne JSON - via localstorage
-            window.location.reload()//recharge la page
             
             //le nombre d'article est rajouté via localStorage
-            //let localPanier = localStorage.getItem("nombrePanier");
+            
             let localPanier = JSON.parse(localStorage.getItem("nombrePanier"));
             localPanier = parseInt(localPanier);
             if(localPanier){
@@ -91,8 +95,9 @@ fetch (urlId + recupererId())
             }else{
                 localStorage.setItem("nombrePanier", 1); 
             }
-           
+            
             alertAjouter();//Message d'alerte lors de l'ajout
+            
         }
        
     })

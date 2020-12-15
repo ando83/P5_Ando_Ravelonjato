@@ -161,21 +161,26 @@ h3, h4 {
 
 #panier {
   padding: 20px 40px;
-  margin: 40px auto 80px;
-  width: 500px;
+  margin: 5px auto 80px;
+  width: 70%;
   position: relative;
   background-color: #D8BFD8;
   border-radius: 20px; }
 
+.elementpanier {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
 .elementpanier1 {
   display: flex;
   justify-content: space-between;
-  border: 5px solid rgba(255, 255, 255, 0.5); }
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  padding: 5px 5px; }
   .elementpanier1 p {
     font-family: "Pattaya", sans-serif;
-    font-size: 1.2em;
-    padding-left: 10px; }
-  .elementpanier1 h4 {
+    font-size: 1.3em; }
+  .elementpanier1 h3 {
     width: 150px; }
   .elementpanier1 .prix_panier {
     width: 100px; }
@@ -195,6 +200,89 @@ h3, h4 {
   border-radius: 90px;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px; }
+
+.conteneur_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .conteneur_btn .bouton_supprime {
+    background-color: #FF0000;
+    font-size: 1.1em;
+    color: #fff;
+    border-radius: 20px;
+    padding: 8px;
+    margin-top: 10px;
+    border: #fff; }
+
+.conteneurLien {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 5px; }
+  .conteneurLien .btn_produit {
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: #4169E1;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline-style: none;
+    text-transform: uppercase;
+    padding: 10px 10px; }
+
+main {
+  margin: auto;
+  width: 70%;
+  border: 5px double rgba(28, 110, 164, 0.1);
+  border-radius: 40px 40px 40px 40px; }
+
+#conteneurmain {
+  background-color: #F8EFFC;
+  margin-bottom: 50px; }
+
+.titre_form {
+  text-align: center;
+  font-size: 1.8em;
+  margin: -30px 0 20px 0; }
+
+.conteneur_formulaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3em;
+  font-family: "Pattaya", sans-serif; }
+
+input[type="text"], input[type="email"] {
+  width: 400px;
+  height: 30px; }
+
+.element_form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column; }
+
+::placeholder {
+  font-size: 1.3em; }
+
+.conteneur_envoyer {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .conteneur_envoyer .btn_envoyer {
+    font-size: .8em;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: #4169E1;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline-style: none;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    padding: 10px 50px;
+    text-align: center;
+    margin-bottom: 15px; }
 
 footer {
   background-color: #b882ee;

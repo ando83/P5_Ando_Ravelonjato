@@ -10,6 +10,7 @@ $black: #000000;
 $grey: #A9A9A9;
 $blue: #4169E1;
 $gradientviolet: -webkit-linear-gradient(top, #c47868 0%,#ab6aae 50%,#905cfc 88%);
+$red: #FF0000;
 
 //fonts variables
 $roboto: 'Roboto', sans-serif;
@@ -81,7 +82,7 @@ h1{
   }
 }
 
-//menu
+//MENU
 nav{
   z-index: 2;
   display: flex;
@@ -148,7 +149,7 @@ h3 , h4 {
   font-family: $pattaya;
 }
 
-//La partie articles Page Index
+//-----------LA PARTIE PAGE INDEX------------
 
 #articles{
   flex-direction: column;
@@ -178,7 +179,7 @@ h3 , h4 {
   }
 }
 
-//Partie Page Produit
+//------------PARTIE PAGE PRODUIT-----------
 
 
 #produits{
@@ -238,32 +239,42 @@ h3 , h4 {
   margin-top: 10px;
 }
 
-//Partie Page Panier
+//---------PARTIE PAGE PANIER--------------
 
 #panier{
   padding: 20px 40px;
-  margin: 40px auto 80px;
-  width: 500px;
+  margin: 5px auto 80px;
+  width: 70%;
   position: relative;
   background-color: $lightviolet;
-  border-radius: 20px;   
+  border-radius: 20px;  
+  
+}
+
+.elementpanier{
+  @include classFlex;
 }
 
 .elementpanier1{
   display: flex;
   justify-content: space-between;
   border: 5px solid hsla(0,0%,100%,.5);
+  padding: 5px 5px;
+  
   
   p{
     font-family: $pattaya;
-    font-size: 1.2em;
-    padding-left: 10px;
+    font-size: 1.3em;
+    
   }
-  h4{
+  h3{
     width: 150px;
+    
+    
   }
   .prix_panier{
     width: 100px;
+    
    
   }
 }
@@ -283,9 +294,85 @@ h3 , h4 {
   border: 10px solid hsla(0,0%,100%,.5);
   border-radius: 90px;
   border-top-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 2px; 
+}
+
+.conteneur_btn{
+  @include classFlex;
+  .bouton_supprime{
+    background-color: $red;
+    font-size: 1.1em;
+    //font-family: $pattaya;
+    color: $white;
+    border-radius: 20px;  
+    padding: 8px;
+    margin-top: 10px;
+    border: $white;
+  }
+}
+
+.conteneurLien{
+  @include classFlex;
+  margin: 20px 0 5px;
+  .btn_produit{
+    text-decoration: none;
+    @include boutonblue;
+  }
+}
+
+//Formulaire
+main{
+  margin: auto;
+  width: 70%;
+  border: 5px double rgba(28,110,164,0.1);
+  border-radius: 40px 40px 40px 40px;
   
+}
+
+#conteneurmain{
+  background-color:#F8EFFC ; 
+  margin-bottom: 50px;
+}
+
+.titre_form{
+  text-align: center;
+  font-size: 1.8em;
+  margin: -30px 0 20px 0;
+}
+
+.conteneur_formulaire{
+  @include classFlex;
+  font-size: 1.3em;
+  font-family: $pattaya;
   
+}
+
+input[type="text"], input[type="email"] {
+  width: 400px;
+  height: 30px;
+
+  }
+
+.element_form{
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+
+}
+
+::placeholder {
+  font-size: 1.3em;
+}
+
+.conteneur_envoyer{
+  @include classFlex;
+.btn_envoyer{
+  font-size: .8em;
+  @include boutonblue;
+  padding: 10px 50px;
+  text-align: center;
+  margin-bottom: 15px;
+  }
 }
 
 
@@ -355,6 +442,8 @@ footer{
   }
 }
 
+
+
 @media (max-width: 375px){
 
  h2{
@@ -376,7 +465,10 @@ footer{
         padding: 5px 0px;
       }
    }
+
+
 }
+
 
 
 
