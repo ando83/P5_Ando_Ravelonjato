@@ -287,9 +287,11 @@ input[type="text"], input[type="email"] {
 #nom-confirmation {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  border: 1px solid black; }
   #nom-confirmation .para-detail {
-    font-size: 1.5em; }
+    font-size: 1.3em;
+    color: #7303c0; }
 
 footer {
   background-color: #b882ee;

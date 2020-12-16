@@ -379,9 +379,10 @@ input[type="text"], input[type="email"] {
 
 #nom-confirmation{
   @include classFlex;
-  
+  border: 1px solid black;
   .para-detail{
-    font-size: 1.5em;
+    font-size: 1.3em;
+    color: $violet ;
   }
 }
 
