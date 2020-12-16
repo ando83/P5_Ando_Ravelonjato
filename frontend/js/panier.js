@@ -22,9 +22,9 @@ let code = document.getElementById('code');
 let ville = document.getElementById('ville');
 
 //créer div pour mettre les articles sélectionnées
-let divPanier = document.createElement("div");
+/*let divPanier = document.createElement("div");
 divPanier.setAttribute("class", "elementpanier");
-listePanier.appendChild(divPanier);
+listePanier.appendChild(divPanier);*/
 
 //afficher , si pas de produits dans le panier
 if ( produitTableau === null || produitTableau === undefined ){
@@ -54,13 +54,11 @@ if ( produitTableau === null || produitTableau === undefined ){
 
    //Prix du produit sélectionné
    let paraPanier = document.createElement("p");
-   paraPanier.setAttribute("class", "prix_panier"); 
    paraPanier.innerHTML = "<mark> " + data.price + " €</mark>";
    divPanier1.appendChild (paraPanier);
 
    //Quantité pour chaque produit
    let quantitéPanier = document.createElement("p");
-   quantitéPanier.setAttribute("class", "quantite_panier"); 
    quantitéPanier.innerHTML = "Quantité :" + " " + data.quantité;
    divPanier1.appendChild(quantitéPanier);
 

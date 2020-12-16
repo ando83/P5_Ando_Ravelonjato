@@ -261,17 +261,13 @@ h3 , h4 {
   border: 5px solid hsla(0,0%,100%,.5);
   padding: 5px 5px;
   
-  
-  p{
+  h3,p{
+    width: 40%;
+    text-align: center;
     font-family: $pattaya;
     font-size: 1.3em;
-    
-  }
-  h3{
-    width: 150px;
-    
-    
-  }
+  } 
+  
   .prix_panier{
     width: 100px;
     
@@ -292,7 +288,6 @@ h3 , h4 {
   font-family: $pattaya;
   font-size: 1.3em;
   border: 10px solid hsla(0,0%,100%,.5);
-  border-radius: 90px;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px; 
 }
@@ -388,7 +383,6 @@ input[type="text"], input[type="email"] {
   opacity: 0.9;
   margin-bottom: 100px;
 
-
   p{
     padding: 10px 0;
   }
@@ -454,8 +448,8 @@ footer{
 
 //Responsive nav page index
 
-@media (max-width: 800px){
-
+/*@media (max-width: 800px){
+  
   h1{
     font-size: 2.5em;
   }
@@ -464,7 +458,7 @@ footer{
     font-size: 1.5em;
   }
 
-  nav{
+  nav{  //
 
    ul{
     display: flex;
@@ -485,13 +479,29 @@ footer{
 
 
 
-@media (max-width: 375px){
+
+@media (max-width: 425px){
+
+  #panier{//
+    margin: auto;
+    width: 90%;
+    margin-bottom: 50px;
+    
+  }
+  .elementpanier1{//
+  
+    display: flex;
+    flex-direction: column;
+    
+    margin: auto;
+    
+  }
 
  h2{
     font-size: 1.5em;
   }
 
-  footer{
+  footer{   //
     font-size: 1em;
 
     #contact{
@@ -508,7 +518,94 @@ footer{
    }
 
 
+}*/
+
+@media screen and (min-width: 1024px) and(max-width:1280px){
+  .elementpanier1{
+    
+   h3,p{
+      width: 40%;
+      text-align: center;
+    } 
+  }
+
 }
+
+@media screen and (min-width: 768px) and(max-width:1024px){
+
+  .elementpanier1{
+    display: flex;
+    flex-direction: row;
+    
+    h3,p{
+      width: 40%;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  
+  nav{
+
+    ul{
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: nowrap;
+     font-size: 0.8em;
+     margin-top: 30px;
+     width: 100%;
+   }
+ }
+
+  #panier{
+   margin: auto;
+   width: 90%;
+   margin-bottom: 50px;
+  
+}
+
+.elementpanier1{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  text-align: center;
+  
+  h3, p{
+    width: 100%;
+  }
+}
+
+.conteneurLien{
+  text-align: center;
+}
+
+footer{
+  font-size: 1em;
+
+  #contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 
+     
+  a{
+    width: 100px;
+    padding: 5px 0px;
+    }
+  }
+
+
+
+
+}
+
+
+
+
 
 
 

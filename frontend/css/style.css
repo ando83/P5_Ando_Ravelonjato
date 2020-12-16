@@ -177,11 +177,11 @@ h3, h4 {
   justify-content: space-between;
   border: 5px solid rgba(255, 255, 255, 0.5);
   padding: 5px 5px; }
-  .elementpanier1 p {
+  .elementpanier1 h3, .elementpanier1 p {
+    width: 40%;
+    text-align: center;
     font-family: "Pattaya", sans-serif;
     font-size: 1.3em; }
-  .elementpanier1 h3 {
-    width: 150px; }
   .elementpanier1 .prix_panier {
     width: 100px; }
 
@@ -197,7 +197,6 @@ h3, h4 {
   font-family: "Pattaya", sans-serif;
   font-size: 1.3em;
   border: 10px solid rgba(255, 255, 255, 0.5);
-  border-radius: 90px;
   border-top-left-radius: 2px;
   border-bottom-right-radius: 2px; }
 
@@ -331,13 +330,89 @@ footer {
     font-size: 1em;
     padding-top: 20px; }
 
-@media (max-width: 800px) {
-  h1 {
-    font-size: 2.5em; }
+/*@media (max-width: 800px){
+  
+  h1{
+    font-size: 2.5em;
+  }
 
-  h2 {
-    font-size: 1.5em; }
+  h2{
+    font-size: 1.5em;
+  }
 
+  nav{  //
+
+   ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 0.8em;
+    margin-top: 30px;
+    width: 100%;
+  }
+}
+
+  h5{
+    font-size: 1em;
+  }
+}
+
+
+
+
+@media (max-width: 425px){
+
+  #panier{//
+    margin: auto;
+    width: 90%;
+    margin-bottom: 50px;
+    
+  }
+  .elementpanier1{//
+  
+    display: flex;
+    flex-direction: column;
+    
+    margin: auto;
+    
+  }
+
+ h2{
+    font-size: 1.5em;
+  }
+
+  footer{   //
+    font-size: 1em;
+
+    #contact{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    } 
+     
+      a{
+        width: 100px;
+        padding: 5px 0px;
+      }
+   }
+
+
+}*/
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .elementpanier1 h3, .elementpanier1 p {
+    width: 40%;
+    text-align: center; } }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .elementpanier1 {
+    display: flex;
+    flex-direction: row; }
+    .elementpanier1 h3, .elementpanier1 p {
+      width: 40%;
+      text-align: center; } }
+@media screen and (max-width: 767px) {
   nav ul {
     display: flex;
     flex-direction: row;
@@ -348,11 +423,21 @@ footer {
     margin-top: 30px;
     width: 100%; }
 
-  h5 {
-    font-size: 1em; } }
-@media (max-width: 375px) {
-  h2 {
-    font-size: 1.5em; }
+  #panier {
+    margin: auto;
+    width: 90%;
+    margin-bottom: 50px; }
+
+  .elementpanier1 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center; }
+    .elementpanier1 h3, .elementpanier1 p {
+      width: 100%; }
+
+  .conteneurLien {
+    text-align: center; }
 
   footer {
     font-size: 1em; }
