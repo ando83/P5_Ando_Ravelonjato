@@ -21,11 +21,11 @@ paraDetail.innerHTML = "Merci"+ " "+ "<span>"+contacts.firstName+"</span>" +", v
 divConfirmation.appendChild(paraDetail);
 
 let paraDetaildeux = document.createElement("p");
-paraDetaildeux .setAttribute("class", "para-detail2");
+paraDetaildeux .setAttribute("class", "para-detail1");
 paraDetaildeux.innerHTML = "Votre numéro de commande est le :"+ " "+ "<span>"+orderData+"</span>" +" "+ "pour un montant total de " +"<span>"+prix+"Euros"+"</span>";
 divConfirmation.appendChild(paraDetaildeux);
 
 let paraDetailtrois= document.createElement("p");
-paraDetailtrois .setAttribute("class", "para-detail3");
+paraDetailtrois .setAttribute("class", "para-detail1");
 paraDetailtrois.innerHTML = "Vous allez récevoir un email récapitulatif de votre commande à l'adresse"+ " "+ "<span>"+contacts.email+"</span>";
 divConfirmation.appendChild(paraDetailtrois);

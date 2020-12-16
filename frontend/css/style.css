@@ -288,10 +288,28 @@ input[type="text"], input[type="email"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black; }
+  width: 90%;
+  margin: auto;
+  padding: 50px 0;
+  border-bottom: 5px outset #1C6EA4;
+  border-radius: 27px 27px 9px 9px;
+  background: -webkit-linear-gradient(top, #c47868 0%, #ab6aae 50%, #905cfc 88%);
+  opacity: 0.9;
+  margin-bottom: 100px; }
+  #nom-confirmation p {
+    padding: 10px 0; }
+  #nom-confirmation span {
+    color: #7303c0;
+    font-weight: bold;
+    font-family: "Pattaya", sans-serif;
+    font-size: 1.2em; }
   #nom-confirmation .para-detail {
-    font-size: 1.3em;
-    color: #7303c0; }
+    font-size: 1.5em;
+    font-family: "Pattaya", sans-serif;
+    text-align: center; }
+  #nom-confirmation .para-detail1 {
+    text-align: center;
+    font-size: 1.2em; }
 
 footer {
   background-color: #b882ee;

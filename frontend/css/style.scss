@@ -379,12 +379,42 @@ input[type="text"], input[type="email"] {
 
 #nom-confirmation{
   @include classFlex;
-  border: 1px solid black;
+  width: 90%;
+  margin: auto;
+  padding: 50px 0;
+  border-bottom: 5px outset #1C6EA4;
+  border-radius: 27px 27px 9px 9px;
+  background: $gradientviolet;
+  opacity: 0.9;
+  margin-bottom: 100px;
+
+
+  p{
+    padding: 10px 0;
+  }
+  
+  span{
+    color: $violet;
+    font-weight: bold;
+    font-family: $pattaya;
+    font-size: 1.2em;
+  }
+   
   .para-detail{
-    font-size: 1.3em;
-    color: $violet ;
+    font-size: 1.5em;
+    font-family: $pattaya;
+    text-align: center;
+  }
+  .para-detail1{
+    text-align: center; 
+    font-size: 1.2em;
   }
 }
+
+
+
+
+
 
 
 
