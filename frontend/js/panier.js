@@ -129,8 +129,6 @@ form.addEventListener("submit", function(event){
       return false;
    }
 
-
-
    //Initialiser un tableau et récupérer les id des produits dans le localStorage
    let products = []; 
    let panierS = JSON.parse(localStorage.getItem('panier'));

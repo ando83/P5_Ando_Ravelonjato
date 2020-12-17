@@ -351,8 +351,17 @@ input[type="text"], input[type="email"] {
   height: 30px;
 }
 
-input:invalid{
-  background: #FDEDEC;
+input:invalid {
+  border: 2px solid #C0392B;
+  background-color: #F2D7D5;
+}
+input:focus:invalid {//sélection de l'élément qui a le focus
+  color: #C0392B;
+}
+
+input:valid {
+  border: 2px solid #52BE80;
+  background-color:#E9F7EF;
 }
 
 .element_form{
