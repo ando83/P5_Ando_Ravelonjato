@@ -52,6 +52,11 @@ if ( produitTableau === null || produitTableau === undefined ){
    h3Panier1.style.color = "white";
    divPanier1.appendChild(h3Panier1);
 
+   //Option du produit
+   let optionPanier = document.createElement("p");
+   optionPanier.innerHTML = data.colors;
+   divPanier1.appendChild (optionPanier);
+
    //Prix du produit sélectionné
    let paraPanier = document.createElement("p");
    paraPanier.innerHTML = "<mark> " + data.price + " €</mark>";
@@ -124,13 +129,12 @@ conteneurLienProduit.appendChild(lienProduit);
 //-----PARTIE FORMULAIRE-----//
 
 //mise en place d'une fonction pour alerter si les champs ne sont pas complétés
-document.querySelector ("input").oninvalid = function() {maFonction()};
+document.querySelector("input").oninvalid = function() {maFonction()};
 
 function maFonction() {
    swal("Les champs sont vides ","", "warning");
  }
  
-
 let form = document.getElementById("formulaire")
 form.addEventListener("submit", function(event){
    event.preventDefault();
