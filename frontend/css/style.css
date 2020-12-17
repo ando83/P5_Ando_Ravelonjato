@@ -238,7 +238,8 @@ main {
 
 #conteneurmain {
   background-color: #F8EFFC;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  width: 70%; }
 
 .titre_form {
   text-align: center;
@@ -256,13 +257,16 @@ input[type="text"], input[type="email"] {
   width: 400px;
   height: 30px; }
 
+input:invalid {
+  background: #FDEDEC; }
+
 .element_form {
   margin: 20px 0;
   display: flex;
   flex-direction: column; }
 
 ::placeholder {
-  font-size: 1.3em; }
+  font-size: 1.2em; }
 
 .conteneur_envoyer {
   display: flex;
@@ -330,77 +334,6 @@ footer {
     font-size: 1em;
     padding-top: 20px; }
 
-/*@media (max-width: 800px){
-  
-  h1{
-    font-size: 2.5em;
-  }
-
-  h2{
-    font-size: 1.5em;
-  }
-
-  nav{  //
-
-   ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    font-size: 0.8em;
-    margin-top: 30px;
-    width: 100%;
-  }
-}
-
-  h5{
-    font-size: 1em;
-  }
-}
-
-
-
-
-@media (max-width: 425px){
-
-  #panier{//
-    margin: auto;
-    width: 90%;
-    margin-bottom: 50px;
-    
-  }
-  .elementpanier1{//
-  
-    display: flex;
-    flex-direction: column;
-    
-    margin: auto;
-    
-  }
-
- h2{
-    font-size: 1.5em;
-  }
-
-  footer{   //
-    font-size: 1em;
-
-    #contact{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    } 
-     
-      a{
-        width: 100px;
-        padding: 5px 0px;
-      }
-   }
-
-
-}*/
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   .elementpanier1 h3, .elementpanier1 p {
     width: 40%;
@@ -423,6 +356,12 @@ footer {
     margin-top: 30px;
     width: 100%; }
 
+  .conteneur-titre {
+    width: 90%;
+    margin: auto; }
+    .conteneur-titre h2 {
+      font-size: 1.5em; }
+
   #panier {
     margin: auto;
     width: 90%;
@@ -438,6 +377,13 @@ footer {
 
   .conteneurLien {
     text-align: center; }
+
+  #conteneurmain {
+    width: 90%; }
+
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    height: 30px; }
 
   footer {
     font-size: 1em; }
