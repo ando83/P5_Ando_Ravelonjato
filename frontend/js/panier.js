@@ -21,6 +21,10 @@ let adresse = document.getElementById('adresse');
 let code = document.getElementById('code');
 let ville = document.getElementById('ville');
 
+//créer div pour mettre les articles sélectionnées
+let divPanier = document.createElement("div");
+divPanier.setAttribute("class", "elementpanier");
+listePanier.appendChild(divPanier);
 
 //afficher , si pas de produits dans le panier
 if ( produitTableau === null || produitTableau === undefined ){
@@ -118,6 +122,14 @@ lienProduit.innerHTML = "Poursuivre vos achats?";
 conteneurLienProduit.appendChild(lienProduit);
    
 //-----PARTIE FORMULAIRE-----//
+
+//mise en place d'une fonction pour alerter si les champs ne sont pas complétés
+document.querySelector ("input").oninvalid = function() {maFonction()};
+
+function maFonction() {
+   swal("Les champs sont vides ","", "warning");
+ }
+ 
 
 let form = document.getElementById("formulaire")
 form.addEventListener("submit", function(event){
