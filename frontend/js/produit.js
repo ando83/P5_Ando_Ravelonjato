@@ -74,10 +74,10 @@ fetch (urlId + recupererId())
      event.preventDefault();  //blocage du comportement par défaut du navigateur lorsqu'un événement se produit
      
         let selection = document.getElementById("couleur_select");
-        let couleurSelect = couleur_select.selectedIndex;
+        let couleurSelect = couleur_select.value;//retourne la couleur selectionnée 
        
-        if( couleurSelect == 0 || couleurSelect < 1){
-            alertProduit()//message d'alerte lors de l'ajout
+        if( couleurSelect == ""){ //si null, message d'alerte
+            alertProduit()
            
              
         }else{
