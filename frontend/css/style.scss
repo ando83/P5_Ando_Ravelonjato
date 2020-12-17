@@ -253,7 +253,21 @@ h3 , h4 {
   position: relative;
   background-color: $lightviolet;
   border-radius: 20px;  
-  
+}
+
+.element_form{
+ 
+  span{
+    color: red;
+    font-family: $roboto;
+    font-size: .7em;
+  }
+  p{
+    color: red;
+    font-family: $roboto;
+    font-size: .7em;
+    text-align: center;
+  }
 }
 
 .elementpanier{

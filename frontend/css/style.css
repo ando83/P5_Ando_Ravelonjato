@@ -167,6 +167,16 @@ h3, h4 {
   background-color: #D8BFD8;
   border-radius: 20px; }
 
+.element_form span {
+  color: red;
+  font-family: "Roboto", sans-serif;
+  font-size: .7em; }
+.element_form p {
+  color: red;
+  font-family: "Roboto", sans-serif;
+  font-size: .7em;
+  text-align: center; }
+
 .elementpanier {
   display: flex;
   justify-content: center;
