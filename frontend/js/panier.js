@@ -21,10 +21,6 @@ let adresse = document.getElementById('adresse');
 let code = document.getElementById('code');
 let ville = document.getElementById('ville');
 
-//créer div pour mettre les articles sélectionnées
-/*let divPanier = document.createElement("div");
-divPanier.setAttribute("class", "elementpanier");
-listePanier.appendChild(divPanier);*/
 
 //afficher , si pas de produits dans le panier
 if ( produitTableau === null || produitTableau === undefined ){
@@ -122,7 +118,9 @@ lienProduit.innerHTML = "Poursuivre vos achats?";
 conteneurLienProduit.appendChild(lienProduit);
    
 //-----PARTIE FORMULAIRE-----//
-document.getElementById("formulaire").addEventListener("submit", function(event){
+
+let form = document.getElementById("formulaire")
+form.addEventListener("submit", function(event){
    event.preventDefault();
    
    //Alert si le panier est vide
@@ -130,6 +128,8 @@ document.getElementById("formulaire").addEventListener("submit", function(event)
       swal("Votre panier est vide ","", "warning");
       return false;
    }
+
+
 
    //Initialiser un tableau et récupérer les id des produits dans le localStorage
    let products = []; 
