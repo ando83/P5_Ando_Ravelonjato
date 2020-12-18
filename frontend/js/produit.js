@@ -63,6 +63,7 @@ console.log(data)
     function alertAjouter(){
         swal("Article ajouté au panier!", "cliquez sur l'icône Panier pour voir les détails", "success"); 
     }  
+        
     
     //sauvegarder le produit au clic du bouton pour mettre au panier
     let btn = document.getElementById("bouton_produit");
@@ -71,12 +72,12 @@ console.log(data)
      
         let selection = document.getElementById("couleur_select");
         let couleurSelect = couleur_select.value;//retourne la couleur selectionnée 
-       
+
         if( couleurSelect == ""){ //si null, message d'alerte
             alertProduit()
-             
+            
         }else{
-            let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer toutes les clés via localstorage 
+            let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer les valeurs stockées via localstorage 
             produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect, quantité: 1}); //On ajoute des éléments au tableau
             localStorage.setItem('panier', JSON.stringify(produitTableau));//stocker clé et valeur pendant l'ajout dans le localStorage et conversion valeur javascript en chaîne JSON - via localstorage
             
@@ -86,9 +87,11 @@ console.log(data)
             if(localPanier){
                 localStorage.setItem("nombrePanier", localPanier + 1);
             }else{
-                localStorage.setItem("nombrePanier", 1); 
+                localStorage.setItem("nombrePanier", 1);    
             }
             alertAjouter();//Message d'alerte lors de l'ajout
+            
+
         }  
     })
 })

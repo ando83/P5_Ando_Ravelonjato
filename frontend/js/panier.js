@@ -1,8 +1,8 @@
 //Intialiser pour accéder au localStorage
 
-let produitTableau = JSON.parse(localStorage.getItem('panier')); //liste produits
+let produitTableau = JSON.parse(localStorage.getItem('panier')); //tableau de liste produits
 
-let localPanier = JSON.parse(localStorage.getItem("nombrePanier"));//Quantité total
+let localPanier = localStorage.getItem("nombrePanier");//Quantité total
 
 //Initialisé un tableau pour récup prix pour chaque produit dans le localStorage
 let montantProduit = [];  
