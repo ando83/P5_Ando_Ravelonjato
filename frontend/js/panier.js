@@ -69,7 +69,7 @@ if ( produitTableau === null || produitTableau === undefined ){
 
    //faire un push  dans le tableau via localstorage
    montantProduit.push(data.price); 
-   //console.log(montanProduit)
+
    });
 
    //Affiche le nombre total des articles

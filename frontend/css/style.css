@@ -393,6 +393,9 @@ footer {
     .elementpanier1 h3, .elementpanier1 p {
       width: 100%; }
 
+  .element_panierh3 {
+    text-align: center; }
+
   .conteneurLien {
     text-align: center; }
 
