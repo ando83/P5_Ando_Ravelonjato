@@ -15,38 +15,48 @@ let produit = document.getElementById("produits");
 //Déclarer les variables
 let divProduit, h3Produit, imgProduit, h4Produit, paraProduit; 
 
+//Fonction pour simplifier la création de mes éléments
+function createElement(element) {
+    return document.createElement(element); 
+  }
+
+  function appendChild(parent, el) {
+    return parent.appendChild(el); 
+  }
+
 fetch (urlId + recupererId())
 .then(response => response.json())
-.then(data=> {
-console.log(data)    
-    //Créer div produit
-    divProduit = document.createElement("div");
+.then(function(data) {
+console.log(data) 
+
+    //Créer div produit à l'aide des fonctions createElement et appendChild
+    divProduit = createElement("div");
     divProduit.setAttribute("class", "elementproduit");
-    produit.appendChild(divProduit);
+    appendChild(produit, divProduit); 
 
     //créer h3, le nom des oursons
-    h3Produit = document.createElement("h3");
+    h3Produit = createElement("h3");
     h3Produit.style.fontSize = "1.8em";
     h3Produit.style.margin = "10px 0";
     h3Produit.style.color = "white";
     h3Produit.innerHTML = data.name;
-    divProduit.appendChild(h3Produit);
+    appendChild(divProduit, h3Produit); 
 
     //rajouter image
-    imgProduit = document.createElement("img");
+    imgProduit = createElement("img");
     imgProduit.src = data.imageUrl;
-    divProduit.appendChild (imgProduit);
+    appendChild(divProduit, imgProduit); 
 
     //créer h4, le prix des oursons
-    h4Produit = document.createElement("h4");
+    h4Produit = createElement("h4");
     h4Produit.style.margin = "7px 0";
     h4Produit.innerHTML = data.description;
-    divProduit.appendChild(h4Produit);
+    appendChild(divProduit, h4Produit);
 
     //créer un paragraphe, description des oursons
-    paraProduit = document.createElement("p");
+    paraProduit = createElement("p");
     paraProduit.innerHTML =  "<mark>Prix = " + data.price + " €</mark>";
-    divProduit.appendChild(paraProduit);
+    appendChild(divProduit, paraProduit);
     
     //créer une liste pour le choix des couleurs + boucle
     for(let i = 0; i < data.colors.length; i++){
@@ -91,7 +101,6 @@ console.log(data)
             }
             alertAjouter();//Message d'alerte lors de l'ajout
             
-
         }  
     })
 })
