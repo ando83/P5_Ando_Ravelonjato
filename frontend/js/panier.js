@@ -7,8 +7,8 @@ let localPanier = localStorage.getItem("nombrePanier");//Quantité total
 //Initialisé un tableau pour récup prix pour chaque produit dans le localStorage
 let montantProduit = [];  
 
-//Montant initialisé à 0
-let totalPrix = 0;
+ //Montant initialisé à 0 qu'on va utiliser après
+ let totalPrix = 0;
 
 // récupérer l'id "panier" de la page panier.html 
 let listePanier = document.getElementById("panier");
@@ -81,8 +81,10 @@ if ( produitTableau === null || produitTableau === undefined ){
       }
 
    //MONTANT TOTAL DES PRODUITS - UTILISATION DE LA MÉTHODE RÉDUCE "ACCUMULATEUR"
-   let reducer = (acc, curr) => acc + curr;
-    totalPrix = montantProduit.reduce(reducer);
+  
+   totalPrix = montantProduit.reduce(function (accumulator, currentValue){
+      return accumulator + currentValue
+   }) 
    
    //Montant total envoyer au localStorage
    localStorage.setItem('prixTotal', totalPrix);
