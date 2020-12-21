@@ -13,6 +13,15 @@ let montantProduit = [];
 // récupérer l'id "panier" de la page panier.html 
 let listePanier = document.getElementById("panier");
 
+//Fonction pour simplifier la création de mes éléments
+function createElement(element) {
+   return document.createElement(element); 
+ }
+
+ function appendChild(parent, el) {
+   return parent.appendChild(el); 
+ }
+
 //création variable pour récupérer la valeur saisie à envoyer au serveur (partie formulaire)
 let nom = document.getElementById('nom');
 let prénom =document.getElementById('prénom');
@@ -22,50 +31,50 @@ let code = document.getElementById('code');
 let ville = document.getElementById('ville');
 
 //créer div pour mettre les articles sélectionnées
-let divPanier = document.createElement("div");
+let divPanier = createElement ("div");
 divPanier.setAttribute("class", "elementpanier");
-listePanier.appendChild(divPanier);
+appendChild(listePanier, divPanier); 
 
 //afficher , si pas de produits dans le panier
 if ( produitTableau === null || produitTableau === undefined ){
 
-   let h3Panier = document.createElement("h3");
+   let h3Panier = createElement ("h3");
    h3Panier.setAttribute("class", "element_panierh3");
    h3Panier.innerHTML = " Pas d'articles dans votre Panier!!";
    h3Panier.style.fontSize = "1.5em";
    h3Panier.style.color = "red";
-   divPanier.appendChild(h3Panier);
+   appendChild(divPanier, h3Panier); 
  
 }else{
    //Boucle pour récupérer chaque produit dans le panier
    produitTableau.forEach(function(data){
      
    //créer div pour mettre les articles sélectionnées
-   let divPanier1 = document.createElement("div");
+   let divPanier1 = createElement ("div");
    divPanier1.setAttribute("class", "elementpanier1");
-   listePanier.appendChild(divPanier1);
+   appendChild(listePanier, divPanier1);
 
    //Nom du produit sélectionné
-   let h3Panier1 = document.createElement("h3");
+   let h3Panier1 = createElement ("h3");
    h3Panier1.innerHTML = data.name;
    h3Panier1.style.fontSize = "1.3em";
    h3Panier1.style.color = "white";
-   divPanier1.appendChild(h3Panier1);
+   appendChild(divPanier1, h3Panier1);
 
    //Option du produit
-   let optionPanier = document.createElement("p");
+   let optionPanier= createElement ("p");
    optionPanier.innerHTML = data.colors;
-   divPanier1.appendChild (optionPanier);
+   appendChild(divPanier1, optionPanier);
 
    //Prix du produit sélectionné
-   let paraPanier = document.createElement("p");
+   let paraPanier= createElement ("p");
    paraPanier.innerHTML = "<mark> " + data.price + " €</mark>";
-   divPanier1.appendChild (paraPanier);
+   appendChild(divPanier1, paraPanier);
 
    //Quantité pour chaque produit
-   let quantitéPanier = document.createElement("p");
+   let quantitéPanier= createElement ("p");
    quantitéPanier.innerHTML = "Quantité :" + " " + data.quantité;
-   divPanier1.appendChild(quantitéPanier);
+   appendChild(divPanier1, quantitéPanier);
 
    //faire un push  dans le tableau via localstorage
    montantProduit.push(data.price); 
@@ -74,10 +83,10 @@ if ( produitTableau === null || produitTableau === undefined ){
 
    //Affiche le nombre total des articles
    if (localPanier!== null){
-      let nombreTotal = document.createElement("p");
+      let nombreTotal = createElement ("p");
       nombreTotal.setAttribute("class", "nombretotal"); 
       nombreTotal.innerHTML = "Quantité Total :" + " " + localPanier ;
-      listePanier.appendChild(nombreTotal);
+      appendChild(listePanier, nombreTotal);
       }
 
    //MONTANT TOTAL DES PRODUITS - UTILISATION DE LA MÉTHODE RÉDUCE "ACCUMULATEUR"
@@ -91,22 +100,22 @@ if ( produitTableau === null || produitTableau === undefined ){
    localStorage.getItem('prixTotal');
    
    // Affichage du prix total
-   let paraPrix = document.createElement("p");
+   let paraPrix = createElement("p");
    paraPrix.setAttribute("class", "prixtotal");
-
    paraPrix.innerHTML = "Total à régler :" + " " + "<mark>"+totalPrix+"<mark>"+ "€";
-   listePanier.appendChild(paraPrix);
+   appendChild(listePanier, paraPrix);
 
    // DIV conteneur bouton pour vider le panier
-   let boutonConteneur = document.createElement("div");
+   let boutonConteneur = createElement("div");
    boutonConteneur.setAttribute("class", "conteneur_btn");
-   listePanier.appendChild(boutonConteneur);
+   appendChild(listePanier, boutonConteneur);
 
    //BOUTON POUR VIDER LE PANIER
-   let btnSupprime = document.createElement("button");
+   let btnSupprime = createElement("button");
    btnSupprime.setAttribute("class", "bouton_supprime")
    btnSupprime.innerHTML = "Vider le panier";
-   boutonConteneur.appendChild(btnSupprime);
+   appendChild(boutonConteneur, btnSupprime);
+   
 
    btnSupprime.addEventListener('click', function () {
    swal("Votre panier est vide!", "","warning").then( () => {
@@ -118,15 +127,15 @@ if ( produitTableau === null || produitTableau === undefined ){
 }
 
 //Lien pour revenir à la page d'accueil
-let conteneurLienProduit = document.createElement("div");
+let conteneurLienProduit = createElement("div");
 conteneurLienProduit .setAttribute("class", "conteneurLien");
-listePanier.appendChild(conteneurLienProduit);
+appendChild(listePanier,conteneurLienProduit );
 
-let lienProduit = document.createElement("a");
+let lienProduit = createElement("a");
 lienProduit.className ='btn_produit';
 lienProduit.href = "index.html";
 lienProduit.innerHTML = "Poursuivre vos achats?";
-conteneurLienProduit.appendChild(lienProduit);
+appendChild(conteneurLienProduit, lienProduit);
    
 //-----PARTIE FORMULAIRE-----//
 

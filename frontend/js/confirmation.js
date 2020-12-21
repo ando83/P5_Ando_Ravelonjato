@@ -6,26 +6,35 @@ let contacts = JSON.parse(localStorage.getItem("contact"))//lecture tableau du l
 
 let prix = localStorage.getItem("prixTotal")
 
+//Fonction pour simplifier la création de mes éléments
+function createElement(element) {
+    return document.createElement(element); 
+  }
+ 
+  function appendChild(parent, el) {
+    return parent.appendChild(el); 
+  }
+
 // récupérer l'id "panier" de la page confirmation.html 
 let confirmation = document.getElementById("nom-confirmation");
 
-//créer div conteneur
-let divConfirmation = document.createElement("div");
+//créer div conteneur à l'aide des fonctions
+let divConfirmation = createElement("div");
 divConfirmation.setAttribute("class", "element-commande");
-confirmation.appendChild(divConfirmation);
+appendChild(confirmation, divConfirmation);
 
 
-let paraDetail = document.createElement("p");
+let paraDetail = createElement("p");
 paraDetail .setAttribute("class", "para-detail");
 paraDetail.innerHTML = "Merci"+ " "+ "<span>"+contacts.firstName+"</span>" +", votre commande à bien été enregistrée.";
-divConfirmation.appendChild(paraDetail);
+appendChild(divConfirmation, paraDetail);
 
-let paraDetaildeux = document.createElement("p");
+let paraDetaildeux = createElement("p");
 paraDetaildeux .setAttribute("class", "para-detail1");
 paraDetaildeux.innerHTML = "Votre numéro de commande est le :"+ " "+ "<span>"+orderData+"</span>" +" "+ "pour un montant total de " +"<span>"+prix+"Euros"+"</span>";
-divConfirmation.appendChild(paraDetaildeux);
+appendChild(divConfirmation, paraDetaildeux);
 
-let paraDetailtrois= document.createElement("p");
+let paraDetailtrois= createElement("p");
 paraDetailtrois .setAttribute("class", "para-detail1");
 paraDetailtrois.innerHTML = "Vous allez récevoir un email récapitulatif de votre commande à l'adresse"+ " "+ "<span>"+contacts.email+"</span>";
-divConfirmation.appendChild(paraDetailtrois);
+appendChild(divConfirmation, paraDetailtrois);
