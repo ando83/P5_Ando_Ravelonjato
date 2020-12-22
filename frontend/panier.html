@@ -11,7 +11,6 @@
      <title>Orinoco</title>
 </head>
 <body>
-
 <header>
         <nav>
           <a href="index.html" class="logo"><i class="fas fa-shopping-cart fa-3x"></i><h1>Orinoco</h1></a>
@@ -25,20 +24,16 @@
             </ul>
         </nav>
 </header>
-
 <div class="conteneur-titre">
   <h2>Détails de votre Panier</h2> 
 </div>
-
 <div id="conteneur_panier">
-    <section id="panier"> </section>   
+    <div id="panier"> </div>   
 </div>
-
-
 <h3 class="titre_form">Completer ce formulaire pour votre commande </h3>
 <main id="conteneurmain">
  <div class="conteneur_formulaire">
-  <form role="form" id="formulaire" class="element_form">
+  <form  id="formulaire" class="element_form">
     <div class="element_form">
       <label for="lastName">Nom<span>*</span></label>
       <input type="text" id="lastName" placeholder="Entrer votre Nom" required pattern="[a-zA-Z*(é|è|à|ù)\-\s]{2,30}">
@@ -70,19 +65,15 @@
   </form>    
  </div>
 </main>
-
 <footer>
   <div id="contact">
     <a href="index.html"><i class="fab fa-facebook-square fa-lg"></i> Facebook</a>
     <a href="index.html"><i class="fab fa-twitter-square fa-lg"></i> Twitter</a>
     <a href="mailto:contact@orinoco.com"><i class="fas fa-mail-bulk fa-lg"></i> Contact</a>
   </div>  
-  
-   <div id="footer"><p>© Orinoco 2020 -Tous droits résérvés.</p></div>
+  <div id="footer"><p>© Orinoco 2020 -Tous droits résérvés.</p></div>
 </footer>
-
-<script src="js/panier.js"></script>
+<script type="module" src="js/panier.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
-
 </html>
