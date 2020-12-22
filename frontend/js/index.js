@@ -1,6 +1,6 @@
+import {createElement, appendChild} from "./rappel.js" ;
 
 // Requête API Fetch pour récupérer les données  + modifier structure de la page (DOM)
-
 let url = "http://localhost:3000/api/teddies";
 
 // récupérer id ="articles" de la page index.html     
@@ -8,15 +8,6 @@ let article = document.getElementById("articles");
 
 //déclarer les variables
 let divTitre, h3Titre, h4Titre,imgTitre,lien;
-
-//Fonction pour simplifier la création de mes éléments
-function createElement(element) {
-    return document.createElement(element); 
-  }
-
-  function appendChild(parent, el) {
-    return parent.appendChild(el); 
-  }
 
 fetch(url)
     .then(response => response.json())
@@ -56,7 +47,6 @@ fetch(url)
     lien.innerHTML = "Voir le produit";
     appendChild(divTitre, lien);
 
-    
        }  
    })
     

@@ -189,7 +189,6 @@ h3 , h4 {
 
 #produits{
   @include classFlex;
-  //flex-direction: column;
 
   img{
     width: 70%;
@@ -237,6 +236,19 @@ h3 , h4 {
 
 #couleur_select{
   font-size: 1em;
+  padding: 3px;
+}
+
+#quantité{
+  color: $white;
+  font-family: $pattaya;
+  font-size: 1.3em;
+}
+
+#quantite{
+  padding: 3px;
+  width: 70px;
+  font-size: .9em;
 }
 
 #bouton_produit{
@@ -292,13 +304,6 @@ h3 , h4 {
   }
 }
 
-.nombretotal{
-  text-align: center;
-  font-family: $pattaya;
-  font-size: 1.3em;
-  border: 10px solid hsla(0,0%,100%,.5);
-}
-
 .prixtotal{
   text-align: center;
   margin: 20px 0 10px 0;
@@ -314,7 +319,6 @@ h3 , h4 {
   .bouton_supprime{
     background-color: $red;
     font-size: 1.1em;
-    //font-family: $pattaya;
     color: $white;
     border-radius: 20px;  
     padding: 8px;
@@ -338,7 +342,6 @@ main{
   width: 70%;
   border: 5px double rgba(28,110,164,0.1);
   border-radius: 40px 40px 40px 40px;
-  
 }
 
 #conteneurmain{
@@ -357,7 +360,6 @@ main{
   @include classFlex;
   font-size: 1.3em;
   font-family: $pattaya;
-  
 }
 
 input[type="text"], input[type="email"] {
@@ -382,7 +384,6 @@ input:valid {
   margin: 20px 0;
   display: flex;
   flex-direction: column;
-
 }
 
 ::placeholder {

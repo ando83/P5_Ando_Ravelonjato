@@ -145,7 +145,18 @@ h3, h4 {
     font-size: 1.3em; }
 
 #couleur_select {
-  font-size: 1em; }
+  font-size: 1em;
+  padding: 3px; }
+
+#quantité {
+  color: #fff;
+  font-family: "Pattaya", sans-serif;
+  font-size: 1.3em; }
+
+#quantite {
+  padding: 3px;
+  width: 70px;
+  font-size: .9em; }
 
 #bouton_produit {
   font-weight: bold;
@@ -194,12 +205,6 @@ h3, h4 {
     font-size: 1.3em; }
   .elementpanier1 .prix_panier {
     width: 100px; }
-
-.nombretotal {
-  text-align: center;
-  font-family: "Pattaya", sans-serif;
-  font-size: 1.3em;
-  border: 10px solid rgba(255, 255, 255, 0.5); }
 
 .prixtotal {
   text-align: center;

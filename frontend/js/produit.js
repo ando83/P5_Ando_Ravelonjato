@@ -1,3 +1,4 @@
+import {createElement, appendChild, alertProduit, alertAjouter } from "./rappel.js" ;
 
 //l'url de l'API
 let urlId = "http://localhost:3000/api/teddies/";
@@ -14,16 +15,7 @@ let produit = document.getElementById("produits");
 
 //Déclarer les variables
 let divProduit, h3Produit, imgProduit, h4Produit, paraProduit; 
-
-//Fonction pour simplifier la création de mes éléments
-function createElement(element) {
-    return document.createElement(element); 
-  }
-
-  function appendChild(parent, el) {
-    return parent.appendChild(el); 
-  }
-
+  
 fetch (urlId + recupererId())
 .then(response => response.json())
 .then(function(data) {
@@ -64,17 +56,7 @@ console.log(data)
         option.innerHTML=data.colors[i];
         document.getElementById("couleur_select").appendChild(option);
         }
-    
-    //Messages d'alerte lors de l'ajout du produit 
-   function alertProduit(){
-        swal("Sélectionnez une couleur!","", "warning");
-    }
-    
-    function alertAjouter(){
-        swal("Article ajouté au panier!", "cliquez sur l'icône Panier pour voir les détails", "success"); 
-    }  
-        
-    
+
     //sauvegarder le produit au clic du bouton pour mettre au panier
     let btn = document.getElementById("bouton_produit");
     btn.addEventListener ("click", function(event){
@@ -83,22 +65,16 @@ console.log(data)
         let selection = document.getElementById("couleur_select");
         let couleurSelect = couleur_select.value;//retourne la couleur selectionnée 
 
-        if( couleurSelect == ""){ //si null, message d'alerte
+        let quantite = document.getElementById("quantite").value;
+
+        if( couleurSelect === ""){ //si null, message d'alerte
             alertProduit()
             
         }else{
             let produitTableau = JSON.parse(localStorage.getItem('panier')) || [];//Analyser et récupérer les valeurs stockées via localstorage 
-            produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect, quantité: 1}); //On ajoute des éléments au tableau
+            produitTableau.push({id: data._id, name: data.name, price : data.price, image:data.imageUrl, colors: couleurSelect, quantité: quantite}); //On ajoute des éléments au tableau
             localStorage.setItem('panier', JSON.stringify(produitTableau));//stocker clé et valeur pendant l'ajout dans le localStorage et conversion valeur javascript en chaîne JSON - via localstorage
             
-            //le nombre d'article est rajouté via localStorage
-            let localPanier = JSON.parse(localStorage.getItem("nombrePanier"));
-            localPanier = parseInt(localPanier);
-            if(localPanier){
-                localStorage.setItem("nombrePanier", localPanier + 1);
-            }else{
-                localStorage.setItem("nombrePanier", 1);    
-            }
             alertAjouter();//Message d'alerte lors de l'ajout
             
         }  

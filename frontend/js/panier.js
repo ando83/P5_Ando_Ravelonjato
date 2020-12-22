@@ -1,26 +1,16 @@
+import {createElement, appendChild, maFonction} from "./rappel.js" ;
+
 //Intialiser pour accéder au localStorage
-
 let produitTableau = JSON.parse(localStorage.getItem('panier')); //tableau de liste produits
-
-let localPanier = localStorage.getItem("nombrePanier");//Quantité total
 
 //Initialisé un tableau pour récup prix pour chaque produit dans le localStorage
 let montantProduit = [];  
 
- //Montant initialisé à 0 qu'on va utiliser après
- let totalPrix = 0;
+ //Montant initialisé à 0 
+let totalPrix = 0;
 
 // récupérer l'id "panier" de la page panier.html 
 let listePanier = document.getElementById("panier");
-
-//Fonction pour simplifier la création de mes éléments
-function createElement(element) {
-   return document.createElement(element); 
- }
-
- function appendChild(parent, el) {
-   return parent.appendChild(el); 
- }
 
 //création variable pour récupérer la valeur saisie à envoyer au serveur (partie formulaire)
 let nom = document.getElementById('nom');
@@ -49,7 +39,7 @@ if ( produitTableau === null || produitTableau === undefined ){
    //Boucle pour récupérer chaque produit dans le panier
    produitTableau.forEach(function(data){
      
-   //créer div pour mettre les articles sélectionnées
+   //créer div pour mettre les articles sélectionnées à l'aide des fonctions createElement et appendChild
    let divPanier1 = createElement ("div");
    divPanier1.setAttribute("class", "elementpanier1");
    appendChild(listePanier, divPanier1);
@@ -68,31 +58,25 @@ if ( produitTableau === null || produitTableau === undefined ){
 
    //Prix du produit sélectionné
    let paraPanier= createElement ("p");
-   paraPanier.innerHTML = "<mark> " + data.price + " €</mark>";
+   paraPanier.innerHTML = "<mark> " + data.price*data.quantité+ " €</mark>";
    appendChild(divPanier1, paraPanier);
-
-   //Quantité pour chaque produit
+   
    let quantitéPanier= createElement ("p");
    quantitéPanier.innerHTML = "Quantité :" + " " + data.quantité;
    appendChild(divPanier1, quantitéPanier);
+   
+   //variable pour le total
+   let dataTotal = data.price * data.quantité
 
    //faire un push  dans le tableau via localstorage
-   montantProduit.push(data.price); 
+   montantProduit.push(dataTotal); 
 
    });
-
-   //Affiche le nombre total des articles
-   if (localPanier!== null){
-      let nombreTotal = createElement ("p");
-      nombreTotal.setAttribute("class", "nombretotal"); 
-      nombreTotal.innerHTML = "Quantité Total :" + " " + localPanier ;
-      appendChild(listePanier, nombreTotal);
-      }
-
+   
    //MONTANT TOTAL DES PRODUITS - UTILISATION DE LA MÉTHODE RÉDUCE "ACCUMULATEUR"
-  
+
    totalPrix = montantProduit.reduce(function (accumulator, currentValue){
-      return accumulator + currentValue
+      return accumulator +  currentValue
    }) 
    
    //Montant total envoyer au localStorage
@@ -116,14 +100,13 @@ if ( produitTableau === null || produitTableau === undefined ){
    btnSupprime.innerHTML = "Vider le panier";
    appendChild(boutonConteneur, btnSupprime);
    
-
    btnSupprime.addEventListener('click', function () {
    swal("Votre panier est vide!", "","warning").then( () => {
       location.href = 'panier.html'
   })
    window.localStorage.clear();//vide toutes les clés stockées
-   })
-
+   
+  })
 }
 
 //Lien pour revenir à la page d'accueil
@@ -141,10 +124,6 @@ appendChild(conteneurLienProduit, lienProduit);
 
 //mise en place d'une fonction pour alerter si les champs ne sont pas complétés
 document.querySelector("input").oninvalid = function() {maFonction()};
-
-function maFonction() {
-   swal("Les champs sont vides ","", "warning");
- }
  
 let form = document.getElementById("formulaire")
 form.addEventListener("submit", function(event){
@@ -202,6 +181,7 @@ form.addEventListener("submit", function(event){
    
    .catch((error) => {
    console.error(error);
-});
+ });
 
-});
+}); 
+
