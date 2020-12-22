@@ -11,7 +11,6 @@
      <title>Orinoco</title>
 </head>
 <body>
-
 <header>
     <nav>
        <a href="index.html" class="logo"><i class="fas fa-shopping-cart fa-3x"></i><h1>Orinoco</h1></a>
@@ -25,40 +24,34 @@
             </ul>
     </nav>
 </header>
-
 <div class="conteneur-titre">
   <h2>Choix des Ours en peluche</h2>
 </div>
-
-<section id="produits"></section>
-
+<div id="produits"></div>
 <div id="conteneurCouleur"> 
-
   <label for="couleur_select" id="label_couleur">Couleur</label>
   <select name="couleur" id="couleur_select">
     <option value="" disabled selected>Choix des couleurs</option>
   </select>
-
-  <!--<label for="quantite_select" id="label_quantite">Quantité</label>
-  <input type="number" id="quantite" name="quantite" min="1" max="10" value="1">-->
-
+  <label for="quantite" id="quantité">Quantité</label>
+  <select id="quantite">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
   <button type="button" id="bouton_produit">Ajouter au panier</button>
-
- 
 </div> 
-
 <footer>
   <div id="contact">
     <a href="index.html"><i class="fab fa-facebook-square fa-lg"></i> Facebook</a>
     <a href="index.html"><i class="fab fa-twitter-square fa-lg"></i> Twitter</a>
     <a href="mailto:contact@orinoco.com"><i class="fas fa-mail-bulk fa-lg"></i> Contact</a>
   </div>  
-  
-   <div id="footer"><p>© Orinoco 2020 -Tous droits résérvés.</p></div>
+  <div id="footer"><p>© Orinoco 2020 -Tous droits résérvés.</p></div>
 </footer>
-
-<script src="js/produit.js"></script>
+<script type="module" src="js/produit.js"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
-
 </html>
