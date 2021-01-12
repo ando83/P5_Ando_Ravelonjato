@@ -1,4 +1,4 @@
-import {createElement, appendChild, maFonction} from "./rappel.js" ;
+//import {createElement, appendChild, maFonction} from "./rappel.js" ;
 
 //Intialiser pour accéder au localStorage
 let produitTableau = JSON.parse(localStorage.getItem('panier')); //tableau de liste produits

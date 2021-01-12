@@ -1,4 +1,4 @@
-import {createElement, appendChild, alertProduit, alertAjouter } from "./rappel.js" ;
+//import {createElement, appendChild, alertProduit, alertAjouter } from "./rappel.js" ;
 
 //l'url de l'API
 let urlId = "http://localhost:3000/api/teddies/";

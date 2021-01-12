@@ -1,4 +1,11 @@
-import {createElement, appendChild} from "./rappel.js" ;
+//import {createElement, appendChild} from "./rappel.js" ;
+ function createElement(element) {
+    return document.createElement(element); 
+}
+
+ function appendChild(parent, el) {
+    return parent.appendChild(el); 
+}
 
 // Requête API Fetch pour récupérer les données  + modifier structure de la page (DOM)
 let url = "http://localhost:3000/api/teddies";
