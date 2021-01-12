@@ -1,4 +1,16 @@
-//import {createElement, appendChild, maFonction} from "./rappel.js" ;
+//Fonction de raccourci pour document.createElement
+function createElement(element) {
+   return document.createElement(element); 
+}
+//Fonction de raccourci pour la méhode appendChild
+function appendChild(parent, el) {
+   return parent.appendChild(el); 
+}
+
+//Fonction alerte
+function maFonction() {
+   swal("Les champs sont vides ","", "warning");
+}
 
 //Intialiser pour accéder au localStorage
 let produitTableau = JSON.parse(localStorage.getItem('panier')); //tableau de liste produits

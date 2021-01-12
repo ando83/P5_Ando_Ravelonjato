@@ -1,4 +1,11 @@
-import {createElement, appendChild} from "./rappel.js" ;
+//Fonction de raccourci pour document.createElement
+function createElement(element) {
+    return document.createElement(element); 
+}
+//Fonction de raccourci pour la méhode appendChild
+function appendChild(parent, el) {
+    return parent.appendChild(el); 
+}
 
 // Récupérer et lecture des données du localStorage pour afficher sur la page confirmation
 
