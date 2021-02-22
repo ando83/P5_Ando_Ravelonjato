@@ -1,15 +1,13 @@
-# Orinoco #
+# ORINOCO #
 
-This is the back end server for Project 5 of the Junior Web Developer path.
+Orinoco est une entreprise de commerce en ligne.
+Réalisation du site en html, css3, Javascript,et l'utilisation d'une Api externe en JS, Node.js et Express
 
-### Prerequisites ###
+### PRÉREQUIS ###
 
-You will need to have Node and `npm` installed locally on your machine.
+Vous devrez installer localement Node et npm 
 
-### Installation ###
+### INSTALLATION ###
 
-Clone this repo. From within the project folder, run `npm install`. You 
-can then run the server with `node server`. 
-The server should run on `localhost` with default port `3000`. If the
-server runs on another port for any reason, this is printed to the
-console when the server starts, e.g. `Listening on port 3001`.
+Lancer le serveur à partir du dossier backend et exécutez "npm install".Ensuite, sur le terminal lancé le serveur avec la commande "node server".
+Lancer l'application en allant sur index.html depuis le navigateur
